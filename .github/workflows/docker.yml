@@ -63,7 +63,7 @@ jobs:
           context: ./
           file: ./Dockerfile
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ghcr.io/${{ github.repository_owner }}/domo-nginx-dht-amd64:latest
+          tags: ghcr.io/${{ github.repository_owner }}/domo-nginx-jwt-base-amd64:latest
           cache-from: type=gha,scope=main
           cache-to: type=gha,mode=max,scope=main
       - name: Build arm64
@@ -72,6 +72,6 @@ jobs:
           context: ./
           file: ./Dockerfile-arm64
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ghcr.io/${{ github.repository_owner }}/domo-nginx-dht-arm64:latest
+          tags: ghcr.io/${{ github.repository_owner }}/domo-nginx-jwt-base-arm64:latest
           cache-from: type=gha,scope=main
           cache-to: type=gha,mode=max,scope=main
